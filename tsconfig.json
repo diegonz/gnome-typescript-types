@@ -1,0 +1,23 @@
+{
+    "extends": "@tsconfig/recommended/tsconfig.json",
+    "compilerOptions": {
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "baseUrl": "./",
+        "typeRoots": [
+            "./"
+        ],
+        "types": [],
+        "noEmit": true
+    },
+    "files": [
+        "index.d.ts",
+        "gnome-tests.ts"
+    ]
+}

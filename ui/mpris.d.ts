@@ -1,0 +1,43 @@
+declare const Gio: any;
+declare const GObject: any;
+declare const Shell: any;
+declare const St: any;
+declare const Signals: any;
+declare const Main: any;
+declare const MessageList: any;
+declare const loadInterfaceXML: any;
+declare const DBusIface: any;
+declare const DBusProxy: any;
+declare const MprisIface: any;
+declare const MprisProxy: any;
+declare const MprisPlayerIface: any;
+declare const MprisPlayerProxy: any;
+declare const MPRIS_PLAYER_PREFIX: "org.mpris.MediaPlayer2.";
+declare var MediaMessage: any;
+declare var MprisPlayer: {
+    new (busName: any): {
+        _mprisProxy: any;
+        _playerProxy: any;
+        _visible: boolean;
+        _trackArtists: any[];
+        _trackTitle: string;
+        _trackCoverUrl: string;
+        _busName: any;
+        readonly status: any;
+        readonly trackArtists: any[];
+        readonly trackTitle: string;
+        readonly trackCoverUrl: string;
+        playPause(): void;
+        readonly canGoNext: any;
+        next(): void;
+        readonly canGoPrevious: any;
+        previous(): void;
+        raise(): void;
+        _close(): void;
+        _onMprisProxyReady(): void;
+        _onPlayerProxyReady(): void;
+        _updateState(): void;
+    };
+};
+declare var MediaSection: any;
+//# sourceMappingURL=mpris.d.ts.map

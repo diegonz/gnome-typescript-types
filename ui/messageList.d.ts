@@ -1,0 +1,21 @@
+declare function _fixMarkup(text: any, allowMarkup: any): any;
+declare const Atk: any;
+declare const Clutter: any;
+declare const Gio: any;
+declare const GLib: any;
+declare const GObject: any;
+declare const Graphene: any;
+declare const Meta: any;
+declare const Pango: any;
+declare const St: any;
+declare const Main: any;
+declare const MessageTray: any;
+declare const Util: any;
+declare var MESSAGE_ANIMATION_TIME: number;
+declare var DEFAULT_EXPAND_LINES: number;
+declare var URLHighlighter: any;
+declare var ScaleLayout: any;
+declare var LabelExpanderLayout: any;
+declare var Message: any;
+declare var MessageListSection: any;
+//# sourceMappingURL=messageList.d.ts.map

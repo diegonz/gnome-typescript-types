@@ -1,0 +1,24 @@
+declare function run(): Promise<void>;
+declare function run(): Promise<void>;
+declare function run(): Promise<void>;
+declare function script_topBarNavDone(): void;
+declare function script_notificationShowDone(): void;
+declare function script_notificationCloseDone(): void;
+declare function script_overviewShowDone(): void;
+declare function script_overviewShowDone(_time: any): void;
+declare function script_overviewShowDone(time: any): void;
+declare function script_applicationsShowDone(): void;
+declare function script_applicationsShowDone(time: any): void;
+declare function script_applicationsShowDone(time: any): void;
+declare function finish(): void;
+declare const St: any;
+declare const Main: any;
+declare const MessageTray: any;
+declare const Scripting: any;
+declare var METRICS: {};
+declare let topBarNav: boolean;
+declare let notificationShown: boolean;
+declare let notificationClosed: boolean;
+declare let windowPickerShown: boolean;
+declare let appPickerShown: boolean;
+//# sourceMappingURL=basic.d.ts.map

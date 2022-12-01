@@ -1,0 +1,108 @@
+declare const Gio: any;
+declare const GLib: any;
+declare const Gst: any;
+declare const Gtk: any;
+declare const loadInterfaceXML: any;
+declare const loadSubInterfaceXML: any;
+declare const ServiceImplementation: any;
+declare const ScreencastIface: any;
+declare const IntrospectIface: any;
+declare const IntrospectProxy: any;
+declare const ScreenCastIface: any;
+declare const ScreenCastSessionIface: any;
+declare const ScreenCastStreamIface: any;
+declare const ScreenCastProxy: any;
+declare const ScreenCastSessionProxy: any;
+declare const ScreenCastStreamProxy: any;
+declare const DEFAULT_PIPELINE: "videoconvert chroma-mode=GST_VIDEO_CHROMA_MODE_NONE dither=GST_VIDEO_DITHER_NONE matrix-mode=GST_VIDEO_MATRIX_MODE_OUTPUT_ONLY n-threads=%T ! queue ! vp8enc cpu-used=16 max-quantizer=17 deadline=1 keyframe-mode=disabled threads=%T static-threshold=1000 buffer-size=20000 ! queue ! webmmux";
+declare const DEFAULT_FRAMERATE: 30;
+declare const DEFAULT_DRAW_CURSOR: true;
+declare namespace PipelineState {
+    const INIT: number;
+    const PLAYING: number;
+    const FLUSHING: number;
+    const STOPPED: number;
+}
+declare namespace SessionState {
+    const INIT_1: number;
+    export { INIT_1 as INIT };
+    export const ACTIVE: number;
+    const STOPPED_1: number;
+    export { STOPPED_1 as STOPPED };
+}
+declare var Recorder: {
+    new (sessionPath: any, x: any, y: any, width: any, height: any, filePath: any, options: any, invocation: any, onErrorCallback: any): {
+        _startInvocation: any;
+        _dbusConnection: any;
+        _onErrorCallback: any;
+        _stopInvocation: any;
+        _x: any;
+        _y: any;
+        _width: any;
+        _height: any;
+        _filePath: any;
+        _pipelineString: string;
+        _framerate: number;
+        _drawCursor: boolean;
+        _applyOptions(options: any): void;
+        _addRecentItem(): void;
+        _watchSender(sender: any): void;
+        _nameWatchId: any;
+        _unwatchSender(): void;
+        _senderVanished(): void;
+        _notifyStopped(): void;
+        _onSessionClosed(): void;
+        _initSession(sessionPath: any): void;
+        _sessionProxy: any;
+        _startPipeline(nodeId: any): void;
+        _pipelineState: number;
+        _onStartedCallback: any;
+        startRecording(onStartedCallback: any): void;
+        _streamProxy: any;
+        _sessionState: number;
+        stopRecording(onStoppedCallback: any): void;
+        _onStoppedCallback: any;
+        _stopSession(): void;
+        _onBusMessage(bus: any, message: any, _: any): boolean;
+        _substituteThreadCount(pipelineDescr: any): any;
+        _ensurePipeline(nodeId: any): boolean;
+        _pipeline: any;
+    };
+};
+declare var ScreencastService: {
+    new (): {
+        _canScreencast: boolean;
+        _recorders: Map<any, any>;
+        _senders: Map<any, any>;
+        _lockdownSettings: any;
+        _proxy: any;
+        _introspectProxy: any;
+        readonly ScreencastSupported: boolean;
+        _removeRecorder(sender: any): void;
+        _addRecorder(sender: any, recorder: any): void;
+        _getAbsolutePath(filename: any): any;
+        _generateFilePath(template: any): any;
+        ScreencastAsync(params: any, invocation: any): void;
+        ScreencastAreaAsync(params: any, invocation: any): void;
+        StopScreencastAsync(params: any, invocation: any): void;
+        _objectPath: any;
+        _dbusImpl: any;
+        _holdCount: number;
+        _hasSignals: boolean;
+        _shutdownTimeoutId: number;
+        _autoShutdown: boolean;
+        register(): void;
+        export(): void;
+        unexport(): void;
+        hold(): void;
+        release(): void;
+        _handleError(invocation: any, error: any): bool;
+        _maybeShutdown(): void;
+        _queueShutdownCheck(): void;
+        _trackSender(sender: any): void;
+        _untrackSender(sender: any): void;
+        _injectTracking(methodName: any): void;
+    };
+    canScreencast(): boolean;
+};
+//# sourceMappingURL=screencastService.d.ts.map

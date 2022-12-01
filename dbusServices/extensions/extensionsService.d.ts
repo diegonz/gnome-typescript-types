@@ -1,0 +1,46 @@
+declare const Gio: any;
+declare const GLib: any;
+declare const Shew: any;
+declare const ExtensionUtils: any;
+declare const loadInterfaceXML: any;
+declare const ExtensionPrefsDialog: any;
+declare const ServiceImplementation: any;
+declare const ExtensionsIface: any;
+declare const ExtensionsProxy: any;
+declare var ExtensionsService: {
+    new (): {
+        _proxy: any;
+        readonly ShellVersion: any;
+        UserExtensionsEnabled: any;
+        ListExtensionsAsync(params: any, invocation: any): Promise<void>;
+        GetExtensionInfoAsync(params: any, invocation: any): Promise<void>;
+        GetExtensionErrorsAsync(params: any, invocation: any): Promise<void>;
+        InstallRemoteExtensionAsync(params: any, invocation: any): Promise<void>;
+        UninstallExtensionAsync(params: any, invocation: any): Promise<void>;
+        EnableExtensionAsync(params: any, invocation: any): Promise<void>;
+        DisableExtensionAsync(params: any, invocation: any): Promise<void>;
+        LaunchExtensionPrefsAsync([uuid]: [any], invocation: any): void;
+        OpenExtensionPrefsAsync(params: any, invocation: any): Promise<void>;
+        _prefsDialog: any;
+        CheckForUpdatesAsync(params: any, invocation: any): Promise<void>;
+        _objectPath: any;
+        _dbusImpl: any;
+        _senders: Map<any, any>;
+        _holdCount: number;
+        _hasSignals: boolean;
+        _shutdownTimeoutId: number;
+        _autoShutdown: boolean;
+        register(): void;
+        export(): void;
+        unexport(): void;
+        hold(): void;
+        release(): void;
+        _handleError(invocation: any, error: any): bool;
+        _maybeShutdown(): void;
+        _queueShutdownCheck(): void;
+        _trackSender(sender: any): void;
+        _untrackSender(sender: any): void;
+        _injectTracking(methodName: any): void;
+    };
+};
+//# sourceMappingURL=extensionsService.d.ts.map
