@@ -6872,6 +6872,7 @@ export class Settings extends GObject.Object {
 
     emit(signal: 'writable-changed', key: string): void;
 
+    disconnect(handler_id: number): void;
 
     // Constructors
 
